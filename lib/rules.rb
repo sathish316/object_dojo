@@ -1,0 +1,1 @@
+require 'rules/avoid_keyword'
