@@ -15,4 +15,8 @@ class ClassStructure
     all_instance_variables = instance_variables
     method_names.any? {|method_name| instance_variables.include?(method_name.gsub('=',''))}
   end
+  
+  def line_count
+    @code.split("\n").reject{|line| line.strip.size==0}.size
+  end
 end
