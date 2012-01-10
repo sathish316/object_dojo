@@ -1,6 +1,9 @@
 ObjectDojo is a utility to improve your Object oriented programming skills using rules described in the article "Object Calisthenics" by JeffBay:
 
-The Rules
+[www.xpteam.com/jeff/writings/objectcalisthenics.rtf](www.xpteam.com/jeff/writings/objectcalisthenics.rtf)
+
+### The Rules
+
 1. One level of indentation per method
 2. Don’t use the ELSE keyword
 3. Wrap all primitives and Strings￼￼
@@ -11,18 +14,19 @@ The Rules
 8. No classes with more than two instance variables
 9. No getters/setters/properties
 
-How to run?
+### Usage
 
 Run the command line utility dojo in your current project folder.
 
 myapp$ dojo
 
-Configuring dojo
+### Configure
 
 The rules can be configured by passing command line options. To get the full list of command line options
 
 $ dojo -h
 
-Supported languages
+#### Supported languages
 
-The current version supports only Ruby. Support for other languages like Java, C# and Python will be added in the future.
+The current version supports only Ruby.
+Support for other languages like Java, C# and Python will be added in the future.
