@@ -15,6 +15,7 @@ class ClassValidator
   private
   
   def rules
-    [AvoidAccessor.new, AvoidKeyword.new('else'), ClassLineLimit.new(50), InstanceVariableLimit.new(2), MethodIndentation.new(2)]
+    [AvoidAccessor.new, AvoidKeyword.new('else'), ClassLineLimit.new(50),
+      InstanceVariableLimit.new(2), MethodIndentation.new(2), MethodChainingLimit.new(1)]
   end
 end
