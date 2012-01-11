@@ -19,4 +19,8 @@ class ClassStructure
   def line_count
     @code.split("\n").reject{|line| line.strip.size==0}.size
   end
+  
+  def collection_count
+    @code.scan(/\@\w+\s*\=\s*(\[.*?\]|\{.*?\}|Array\.new|Set\.new|Hash\.new)/).size
+  end
 end

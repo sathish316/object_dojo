@@ -8,4 +8,8 @@ class MethodChainingLimit
       line.count('.') <= 1
     end
   end
+  
+  def message
+    "more than one dot per line"
+  end
 end

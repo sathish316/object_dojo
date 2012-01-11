@@ -109,4 +109,46 @@ describe ClassStructure do
       class_structure.should_not have_accessor_method
     end
   end
+
+  describe "collection count" do
+    it "should count the number of Arrays" do
+      class_structure = ClassStructure.new <<-CODE
+        @foo = []
+        @bar=[1,2,3]
+      CODE
+      class_structure.collection_count.should == 2
+    end
+
+    it "should count the number of Hashes" do
+      class_structure = ClassStructure.new <<-CODE
+        @foo = {}
+        @bar={a: 1, b: 2}
+        @baz = {'a' => 1, 'b' => 2}
+      CODE
+      class_structure.collection_count.should == 3
+    end
+
+    it "should count the number of Arrays declared using new" do
+      class_structure = ClassStructure.new <<-CODE
+        @foo = []
+        @bar=Array.new(5)
+      CODE
+      class_structure.collection_count.should == 2
+    end
+    
+    it "should count the number of Hashes declared using new" do
+      class_structure = ClassStructure.new <<-CODE
+        @bar=Hash.new
+      CODE
+      class_structure.collection_count.should == 1
+    end
+    
+    it "should count the number of Sets declared using new" do
+      class_structure = ClassStructure.new <<-CODE
+        @foo = Set.new
+        @bar=Set.new
+      CODE
+      class_structure.collection_count.should == 2
+    end
+  end
 end
