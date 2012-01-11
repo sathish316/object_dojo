@@ -6,19 +6,25 @@ ObjectDojo is a utility to improve your Object oriented programming skills using
 
 1. One level of indentation per method
 2. Don’t use the ELSE keyword
-3. Wrap all primitives and Strings￼￼
+3. Wrap all primitives and Strings￼(Not implemented)
 4. First class collections
 5. One dot per line
-6. Don’t abbreviate
+6. Don’t abbreviate (Not implemented)
 7. Keep all entities small
 8. No classes with more than two instance variables
 9. No getters/setters/properties
 
+### Installation
+
+To install object dojo
+
+$ gem install object_dojo
+
 ### Usage
 
-Run the command line utility dojo in your current project folder.
+Run the command line utility dojo with path to code
 
-myapp$ dojo
+$ dojo /path/to/code
 
 ### Configure
 
@@ -29,4 +35,3 @@ $ dojo -h
 #### Supported languages
 
 The current version supports only Ruby.
-Support for other languages like Java, C# and Python will be added in the future.
