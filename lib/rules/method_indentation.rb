@@ -2,15 +2,15 @@ class MethodIndentation
   TABS = 2
   
   def initialize(max)
-    @max = max + 2 # including class and def indent
+    @max = max
   end
   
   def valid?(method)
-    max_indent(method) <= @max
+    max_indent(method) <= @max + 2 # including class and def indent
   end
   
   def message
-    "indentation is more than #{@max} levels"
+    "indentation is more than #{@max} level"
   end
   
   private
