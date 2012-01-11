@@ -1,6 +1,7 @@
 require 'class_structure'
 require 'class_validator'
 require 'rules'
+require 'extensions'
 
 class Dojo
   def initialize(dir, file_filter = "**/*.rb")

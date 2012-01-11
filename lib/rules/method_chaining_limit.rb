@@ -5,7 +5,7 @@ class MethodChainingLimit
   
   def valid?(code)
     code.gsub(/\d+\.\d+/,'').split("\n").all? do |line|
-      line.count('.') <= 1
+      line.count('.') <= @max
     end
   end
   

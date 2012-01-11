@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe MethodIndentation do
-  let(:rule) {MethodIndentation.new(3)}
+  let(:rule) {MethodIndentation.new(1)}
   
   it "should be invalid if level of indentation is more than 2" do
     rule.should_not be_valid <<-CODE

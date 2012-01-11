@@ -4,3 +4,4 @@ gemspec
 gem 'rake'
 gem 'rspec'
 gem 'mocha'
+gem 'trollop'

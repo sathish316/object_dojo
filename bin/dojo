@@ -5,7 +5,29 @@ $LOAD_PATH.unshift(lib) if File.directory?(lib) && !$LOAD_PATH.include?(lib)
 
 require 'dojo'
 require 'yaml'
+require 'trollop'
 
-options = YAML::load_file(File.expand_path(File.dirname(__FILE__) + '/../config/rules.yml'))
-dojo = Dojo.new(ARGV[0])
-dojo.validate(options['rules'])
+default_options = YAML::load_file(File.expand_path(File.dirname(__FILE__) + '/../config/rules.yml'))['rules'].symbolize_keys!
+
+options = Trollop::options do
+  version "object_dojo"
+  banner <<-EOS
+ObjectDojo is a utility to practice Object oriented programming.
+It checks the rules described in the article "Object Calisthenics" by Jeff Bay.
+
+www.xpteam.com/jeff/writings/objectcalisthenics.rtf
+
+Usage:
+       dojo [options] <path>+
+where [options] are:
+EOS
+  opt :max_indent, "Level of indentation per method", default: default_options[:max_indent]
+  opt :avoid_keywords, "Keywords to avoid in code", :type => String, default: default_options[:avoid_keywords]
+  opt :max_collections, "Number of first class collections in class", default: default_options[:max_collections]
+  opt :max_chaining, "Number of dots or chained method calls per line", default: default_options[:max_chaining]
+  opt :max_lines, "Lines of code per class", default: default_options[:max_lines]
+  opt :max_instance_vars, "Number of instance variables per class", default: default_options[:max_instance_vars]
+end
+
+dojo = Dojo.new(ARGV.last)
+dojo.validate(default_options.merge(options))

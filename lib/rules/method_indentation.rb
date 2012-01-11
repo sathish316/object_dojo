@@ -2,7 +2,7 @@ class MethodIndentation
   TABS = 2
   
   def initialize(max)
-    @max = max
+    @max = max + 2 # including class and def indent
   end
   
   def valid?(method)
