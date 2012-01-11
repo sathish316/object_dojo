@@ -27,7 +27,6 @@ describe ClassStructure do
     end
 
     it "should not include class variables" do
-      pending
       class_structure = ClassStructure.new <<-CODE
         class Person
           @@count = 0
@@ -149,6 +148,14 @@ describe ClassStructure do
         @bar=Set.new
       CODE
       class_structure.collection_count.should == 2
+    end
+    
+    it "should count only instance collections" do
+      class_structure = ClassStructure.new <<-CODE
+        @foo = []
+        @@bar = []
+      CODE
+      class_structure.collection_count.should == 1
     end
   end
 end

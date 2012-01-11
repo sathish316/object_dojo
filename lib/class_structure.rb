@@ -4,7 +4,7 @@ class ClassStructure
   end
   
   def instance_variables
-    @code.scan(/\@\w+/).map {|name| name.sub('@','')}.uniq
+    @code.scan(/\s+\@\w+/).map {|name| name.strip.sub('@','')}.uniq
   end
   
   def method_names
@@ -21,6 +21,6 @@ class ClassStructure
   end
   
   def collection_count
-    @code.scan(/\@\w+\s*\=\s*(\[.*?\]|\{.*?\}|Array\.new|Set\.new|Hash\.new)/).size
+    @code.scan(/\s+@\w+\s*\=\s*(\[.*?\]|\{.*?\}|Array\.new|Set\.new|Hash\.new)/).size
   end
 end
