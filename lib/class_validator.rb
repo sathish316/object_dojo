@@ -16,7 +16,7 @@ class ClassValidator
   
   def rules
     [
-      MethodIndentation.new(2),
+      MethodIndentation.new(3),
       AvoidKeyword.new('else'),
       AvoidKeyword.new('elsif'),
       FirstClassCollections.new(1),
