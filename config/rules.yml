@@ -1,0 +1,7 @@
+rules:
+  max_indent: 3
+  avoid_keywords: "else,elsif"
+  max_collections: 1
+  max_chaining: 1
+  max_lines: 50
+  max_instance_vars: 2

@@ -8,9 +8,10 @@ class Dojo
     @file_filter = file_filter
   end
   
-  def validate
+  def validate(options)
     Dir.glob("#{@dir}/#{@file_filter}").each do |file|
-      ClassValidator.new(file).validate
+      validator = ClassValidator.new(file, options)
+      validator.validate
     end
   end
 end
