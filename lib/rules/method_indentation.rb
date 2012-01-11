@@ -9,6 +9,10 @@ class MethodIndentation
     max_indent(method) <= @max_level
   end
   
+  def message
+    "indentation is more than #{@max_level} levels"
+  end
+  
   private
   
   def max_indent(code)

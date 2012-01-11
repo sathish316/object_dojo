@@ -6,4 +6,8 @@ class AvoidKeyword
   def valid?(code)
     !code.include?(@keyword)
   end
+  
+  def message
+    "uses #{@keyword} keyword"
+  end
 end
