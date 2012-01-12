@@ -1,4 +1,4 @@
-ObjectDojo is a utility to improve your Object oriented programming skills using rules described in the article "Object Calisthenics" by JeffBay:
+ObjectDojo is a utility to practice Object oriented programming using the rules described in the article "Object Calisthenics" by JeffBay:
 
 [www.xpteam.com/jeff/writings/objectcalisthenics.rtf](www.xpteam.com/jeff/writings/objectcalisthenics.rtf)
 
